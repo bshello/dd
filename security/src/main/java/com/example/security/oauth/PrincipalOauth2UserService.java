@@ -39,6 +39,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             oAuth2UserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
         }else if(userRequest.getClientRegistration().getRegistrationId().equals("naver")) {
             System.out.println("naver");
+            System.out.println((Map)oAuth2User.getAttributes().get("response"));
             oAuth2UserInfo = new NaverUserInfo((Map)oAuth2User.getAttributes().get("response"));
         }else if(userRequest.getClientRegistration().getRegistrationId().equals("kakao")) {
             System.out.println("kakao");
